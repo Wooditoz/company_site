@@ -1,0 +1,160 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getLocaleFromUrl, getDict } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+const lastUpdated = '26 June 2026';
+---
+
+<BaseLayout title="Terms of Service — MOA Digital" description="Terms governing use of the MOA Digital website.">
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
+    <div class="container-x relative pb-6 pt-20 sm:pt-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-5">Legal</p>
+        <h1 class="heading-display text-balance">Terms of Service</h1>
+        <p class="mt-5 text-sm text-muted">Last updated: {lastUpdated}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x pb-24">
+    <div class="prose-legal max-w-3xl space-y-8 text-muted">
+      <p>
+        These Terms of Service ("Terms") govern your access to and use of the
+        moadigital.co website ("Website") operated by MOA Digital Co., Ltd.
+        (Tax ID 0105569088023, 33 Borommaratchachonnani 41, Taling Chan, Bangkok 10170).
+        By accessing or using this Website, you agree to these Terms.
+      </p>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">1. Acceptable Use</h2>
+        <p class="mb-2">You may use this Website for lawful purposes only. You agree not to:</p>
+        <ul class="ml-5 list-disc space-y-1">
+          <li>Use the Website in any way that may damage, disable, overload, or impair it</li>
+          <li>Attempt to access non-public areas, systems, or user accounts</li>
+          <li>Use automated systems (bots, scrapers, crawlers) without our consent</li>
+          <li>Bypass any security or rate-limiting measures</li>
+          <li>Submit false, misleading, or unlawful information through the contact form</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">2. Intellectual Property</h2>
+        <p>
+          All content on this Website — including text, graphics, illustrations, code,
+          designs, logos, and trademarks — is owned by MOA Digital Co., Ltd. or licensed
+          to us. You may not copy, reproduce, redistribute, modify, or create derivative
+          works without our prior written permission. The MOA Digital name and logo are
+          trademarks of MOA Digital Co., Ltd.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">3. Contact Form &amp; Communications</h2>
+        <p>
+          When you submit our contact form, the information you provide is processed in
+          accordance with our
+          <a href="/privacy" class="text-moa-cyan hover:underline">Privacy Policy</a>.
+          We typically respond within 1-2 business days but do not guarantee a specific
+          response time. Form submissions do not constitute a legally binding agreement for
+          services — any engagement is subject to a separate written agreement.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">4. Products &amp; Services Information</h2>
+        <p>
+          Information about our products (such as Aidemly, Stock Management System, and
+          Adaptive AI) is provided for reference. Specifications, features, pricing, and
+          availability are subject to change without notice. Actual service delivery is
+          governed by separate written agreements, statements of work, or master service
+          agreements.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">5. Disclaimers</h2>
+        <p>
+          The Website is provided on an "as is" and "as available" basis without
+          warranties of any kind, express or implied. To the maximum extent permitted by
+          law, MOA Digital disclaims all warranties including merchantability, fitness for
+          a particular purpose, and non-infringement. We do not warrant that the Website
+          will be uninterrupted, error-free, secure, or free of harmful components.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">6. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by law, MOA Digital, its directors, employees,
+          and partners shall not be liable for any indirect, incidental, special,
+          consequential, or punitive damages, including but not limited to loss of
+          profits, data, business opportunities, or goodwill, arising from your use of
+          or inability to use the Website.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">7. Indemnification</h2>
+        <p>
+          You agree to indemnify and hold harmless MOA Digital, its officers, directors,
+          employees, and agents from any claims, damages, losses, or expenses (including
+          reasonable attorney's fees) arising from your misuse of the Website or
+          violation of these Terms.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">8. Third-Party Links</h2>
+        <p>
+          The Website may link to third-party websites or services. We are not responsible
+          for the content, accuracy, privacy practices, or terms of those third parties.
+          Access to them is at your own risk.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">9. Governing Law &amp; Jurisdiction</h2>
+        <p>
+          These Terms are governed by and construed in accordance with the laws of the
+          Kingdom of Thailand, without regard to conflict of law principles. Any disputes
+          arising from these Terms or your use of the Website shall be resolved
+          exclusively by the competent courts of Bangkok, Thailand.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">10. Changes to These Terms</h2>
+        <p>
+          We may modify these Terms at any time by posting the updated version on this
+          page. The "Last updated" date will reflect the latest revision. Your continued
+          use of the Website after changes constitutes acceptance of the updated Terms.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">11. Severability</h2>
+        <p>
+          If any provision of these Terms is found unenforceable, the remaining
+          provisions remain in full effect.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">12. Contact</h2>
+        <p class="mb-2">For questions about these Terms:</p>
+        <div class="rounded-lg border border-hairline bg-surface/60 p-5 text-sm text-white/90">
+          <p class="font-semibold">MOA Digital Co., Ltd.</p>
+          <p>33 Borommaratchachonnani 41, Taling Chan, Bangkok 10170, Thailand</p>
+          <p>Tax ID: 0105569088023</p>
+          <p class="mt-2">
+            Email: <a href="mailto:support@moadigital.co" class="text-moa-cyan hover:underline">support@moadigital.co</a>
+          </p>
+          <p>Phone: (+66) 61-652-9469</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

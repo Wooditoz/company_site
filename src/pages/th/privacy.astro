@@ -1,0 +1,171 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getLocaleFromUrl, getDict } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+const lastUpdated = '26 มิถุนายน 2026';
+---
+
+<BaseLayout title="นโยบายความเป็นส่วนตัว — MOA Digital" description="MOA Digital เก็บ ใช้ และคุ้มครองข้อมูลส่วนบุคคลของคุณอย่างไร">
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
+    <div class="container-x relative pb-6 pt-20 sm:pt-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-5">ข้อกฎหมาย</p>
+        <h1 class="heading-display text-balance">นโยบายความเป็นส่วนตัว</h1>
+        <p class="mt-5 text-sm text-muted">ปรับปรุงล่าสุด: {lastUpdated}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x pb-24">
+    <div class="prose-legal max-w-3xl space-y-8 text-muted">
+      <p>
+        บริษัท เอ็มโอเอ ดิจิทัล จำกัด ("MOA Digital", "เรา") เลขประจำตัวผู้เสียภาษี 0105569088023
+        ตั้งอยู่ที่ 33 ซอยบรมราชชนนี 41 ถนนบรมราชชนนี แขวงตลิ่งชัน เขตตลิ่งชัน กรุงเทพมหานคร 10170
+        ให้ความสำคัญและคุ้มครองข้อมูลส่วนบุคคลของคุณ
+        นโยบายนี้อธิบายวิธีที่เราเก็บ ใช้ และเปิดเผยข้อมูลส่วนบุคคลเมื่อคุณเข้าใช้ moadigital.co
+        หรือติดต่อกับเรา
+      </p>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">1. ข้อมูลที่เราเก็บ</h2>
+        <p class="mb-2">เมื่อคุณส่งฟอร์มติดต่อ เราจะเก็บ:</p>
+        <ul class="ml-5 list-disc space-y-1">
+          <li>ชื่อ</li>
+          <li>อีเมล</li>
+          <li>บริษัท (ไม่บังคับ)</li>
+          <li>เนื้อหาข้อความ</li>
+        </ul>
+        <p class="mt-3 mb-2">และเก็บข้อมูลทางเทคนิคโดยอัตโนมัติ:</p>
+        <ul class="ml-5 list-disc space-y-1">
+          <li>IP address</li>
+          <li>ประเภทเบราว์เซอร์และอุปกรณ์</li>
+          <li>หน้าที่เข้าชม เวลาที่ใช้ และ URL อ้างอิง</li>
+          <li>Server logs (เก็บ 90 วัน)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">2. วัตถุประสงค์ในการใช้ข้อมูล</h2>
+        <ul class="ml-5 list-disc space-y-1">
+          <li>ตอบคำถามและให้บริการตามที่ร้องขอ</li>
+          <li>สื่อสารเกี่ยวกับผลิตภัณฑ์และบริการของเรา</li>
+          <li>ปรับปรุงเว็บไซต์และบริการ</li>
+          <li>ตรวจจับและป้องกันการใช้งานในทางมิชอบ spam และฉ้อโกง</li>
+          <li>ปฏิบัติตามภาระผูกพันทางกฎหมาย</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">3. ฐานทางกฎหมายในการประมวลผล</h2>
+        <p class="mb-2">เราประมวลผลข้อมูลส่วนบุคคลของคุณบนฐาน:</p>
+        <ul class="ml-5 list-disc space-y-1">
+          <li><strong class="text-white">ความยินยอม</strong> — เมื่อคุณส่งฟอร์มติดต่อโดยสมัครใจ</li>
+          <li><strong class="text-white">ประโยชน์โดยชอบธรรม</strong> — เพื่อดำเนินธุรกิจและปรับปรุงบริการ</li>
+          <li><strong class="text-white">ภาระผูกพันทางกฎหมาย</strong> — เพื่อปฏิบัติตาม PDPA และกฎหมายอื่นๆ</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">4. ผู้ให้บริการบุคคลที่สาม</h2>
+        <p class="mb-2">เราใช้บริการต่อไปนี้ในการดำเนินงาน:</p>
+        <ul class="ml-5 list-disc space-y-2">
+          <li>
+            <strong class="text-white">Resend</strong> (ส่งอีเมล, USA) — ประมวลผลอีเมลของคุณเพื่อจัดส่งการตอบกลับ
+            <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener" class="text-moa-cyan hover:underline">นโยบายของ Resend</a>
+          </li>
+          <li>
+            <strong class="text-white">Google reCAPTCHA</strong> — ป้องกันฟอร์มจาก spam
+            Google อาจเก็บข้อมูลทางเทคนิคตาม
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-moa-cyan hover:underline">นโยบายของ Google</a>
+          </li>
+          <li>
+            <strong class="text-white">Google Firebase / Cloud</strong> (hosting) — server logs อาจมี IP address
+            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" class="text-moa-cyan hover:underline">Firebase Privacy</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">5. การโอนข้อมูลข้ามประเทศ</h2>
+        <p>
+          ผู้ให้บริการบางราย (Resend, Google) มี server อยู่นอกประเทศไทย รวมถึงสหรัฐอเมริกาและภูมิภาคอื่นๆ
+          เราคุ้มครองข้อมูลผ่านสัญญามาตรฐานและกรอบความปลอดภัยของผู้ให้บริการ (SOC 2, GDPR-aligned)
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">6. ระยะเวลาเก็บข้อมูล</h2>
+        <ul class="ml-5 list-disc space-y-1">
+          <li>ข้อมูลจากฟอร์มติดต่อ: เก็บ 2 ปี นับจากการติดต่อครั้งสุดท้าย เว้นแต่กฎหมายกำหนดเกินกว่านั้น</li>
+          <li>Server logs: 90 วัน</li>
+          <li>การติดต่อทางอีเมล: เก็บตามที่จำเป็นทางธุรกิจ</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">7. สิทธิ์ของเจ้าของข้อมูล (PDPA / GDPR)</h2>
+        <p class="mb-2">ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล มาตรา 30 และ GDPR (เมื่อบังคับใช้) คุณมีสิทธิ์:</p>
+        <ul class="ml-5 list-disc space-y-1">
+          <li>เข้าถึงข้อมูลส่วนบุคคลที่เรามี</li>
+          <li>ขอแก้ไขข้อมูลที่ไม่ถูกต้องหรือไม่ครบ</li>
+          <li>ขอลบข้อมูล ("สิทธิ์ที่จะถูกลืม")</li>
+          <li>จำกัดหรือคัดค้านการประมวลผล</li>
+          <li>รับข้อมูลในรูปแบบที่ส่งต่อได้</li>
+          <li>เพิกถอนความยินยอมได้ตลอดเวลา (ไม่กระทบการประมวลผลก่อนหน้า)</li>
+          <li>ร้องเรียนต่อสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC)</li>
+        </ul>
+        <p class="mt-3">
+          ใช้สิทธิ์ได้โดยอีเมลถึง
+          <a href="mailto:support@moadigital.co" class="text-moa-cyan hover:underline">support@moadigital.co</a>
+          เราจะตอบกลับภายใน 30 วัน
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">8. การรักษาความปลอดภัย</h2>
+        <p class="mb-2">เรามีมาตรการทางเทคนิคและองค์กรเพื่อปกป้องข้อมูล:</p>
+        <ul class="ml-5 list-disc space-y-1">
+          <li>เข้ารหัส HTTPS ระหว่างส่งข้อมูล</li>
+          <li>เก็บข้อมูลแบบเข้ารหัสกับผู้ให้บริการ</li>
+          <li>ควบคุมการเข้าถึงด้วยหลัก least-privilege</li>
+          <li>จัดการ secret ผ่าน Google Cloud Secret Manager</li>
+          <li>ตรวจสอบความปลอดภัยและอัพเดต dependency อย่างสม่ำเสมอ</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">9. คุกกี้</h2>
+        <p>
+          เว็บไซต์ใช้คุกกี้สำหรับการทำงานพื้นฐาน ความปลอดภัย และการตรวจจับ bot (reCAPTCHA)
+          ขณะนี้เราไม่ได้ใช้คุกกี้ทางการตลาดหรือ analytics คุณสามารถจัดการ preference
+          ได้ผ่านลิงก์ "Cookie Settings" ใน footer
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">10. การเปลี่ยนแปลงนโยบาย</h2>
+        <p>
+          เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงสำคัญจะแจ้งในหน้านี้พร้อมระบุวันที่อัพเดต
+          การใช้งานต่อไปถือว่ายอมรับนโยบายฉบับใหม่
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xl font-semibold text-white">11. ติดต่อเรา</h2>
+        <p class="mb-2">หากมีคำถามเกี่ยวกับความเป็นส่วนตัวหรือต้องการใช้สิทธิ์:</p>
+        <div class="rounded-lg border border-hairline bg-surface/60 p-5 text-sm text-white/90">
+          <p class="font-semibold">บริษัท เอ็มโอเอ ดิจิทัล จำกัด</p>
+          <p>เลขที่ 33 ซอยบรมราชชนนี 41 ถนนบรมราชชนนี แขวงตลิ่งชัน เขตตลิ่งชัน กรุงเทพมหานคร 10170</p>
+          <p>เลขประจำตัวผู้เสียภาษี: 0105569088023</p>
+          <p class="mt-2">
+            อีเมล: <a href="mailto:support@moadigital.co" class="text-moa-cyan hover:underline">support@moadigital.co</a>
+          </p>
+          <p>โทร: (+66) 61-652-9469</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

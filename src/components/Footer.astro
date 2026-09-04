@@ -1,0 +1,79 @@
+---
+import { getLocaleFromUrl, getDict, localizePath } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+const year = new Date().getFullYear();
+
+const sections = [
+  {
+    title: dict.footer.sections.company,
+    items: [
+      { label: dict.nav.services, href: localizePath('/services', locale) },
+      { label: dict.nav.product, href: localizePath('/product', locale) },
+    ],
+  },
+  {
+    title: dict.footer.sections.contact,
+    items: [
+      { label: dict.contact.emailValue, href: `mailto:${dict.contact.emailValue}` },
+      { label: dict.contact.phoneValue, href: `tel:${dict.contact.phoneValue.replace(/[^+\d]/g, '')}` },
+      { label: dict.nav.contact, href: localizePath('/contact', locale) },
+    ],
+  },
+];
+---
+
+<footer class="mt-32 border-t border-hairline">
+  <div class="container-x py-16">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <a href={localizePath('/', locale)} class="flex items-center" aria-label="MOA Digital home">
+          <img
+            src="/logo-256.png"
+            srcset="/logo-256.png 256w, /logo.png 1024w"
+            sizes="64px"
+            alt="MOA Digital"
+            width="256"
+            height="256"
+            class="h-16 w-16 rounded-xl"
+          />
+        </a>
+      </div>
+      {
+        sections.map((section) => (
+          <div>
+            <h4 class="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-muted">
+              {section.title}
+            </h4>
+            <ul class="space-y-2">
+              {section.items.map((item) => (
+                <li>
+                  <a href={item.href} class="text-sm text-white/80 transition hover:text-white">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-6 text-xs text-muted sm:flex-row sm:items-start">
+      <div class="space-y-1">
+        <p>{dict.footer.copyright.replace('{year}', String(year))}</p>
+        <p>{dict.footer.address}</p>
+        <p>{dict.footer.taxId}</p>
+      </div>
+      <div class="flex flex-col items-start gap-2 sm:items-end">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <a href={localizePath('/privacy', locale)} class="hover:text-white">{dict.legal.privacy}</a>
+          <a href={localizePath('/terms', locale)} class="hover:text-white">{dict.legal.terms}</a>
+          <a href="#" data-open-cookie-settings class="hover:text-white">{dict.legal.cookieSettings}</a>
+        </div>
+        <p>moadigital.co</p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "title": "MOA Digital — Product Studio for SaaS, AI, and Smart Factory",
+    "description": "MOA Digital is a Bangkok-based product studio building SaaS platforms, business systems, AI products, and smart factory solutions for SME and enterprise clients.",
+    "ogAlt": "MOA Digital"
+  },
+  "nav": {
+    "services": "Services",
+    "product": "Product",
+    "about": "About",
+    "contact": "Contact",
+    "letsTalk": "Let's talk"
+  },
+  "hero": {
+    "eyebrow": "Product studio · Bangkok",
+    "title": "We build digital products that earn their keep.",
+    "subtitle": "MOA Digital partners with SME and enterprise teams to ship SaaS, business systems, AI products, and smart factory solutions.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "See our products"
+  },
+  "trust": {
+    "label": "Trusted by teams shipping in production"
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Crafting ideas into production.",
+    "subtitle": "",
+    "items": [
+      {
+        "title": "SaaS Platforms",
+        "description": "Multi-tenant products you can launch and scale."
+      },
+      {
+        "title": "Business Systems",
+        "description": "Internal tools that run your daily operations."
+      },
+      {
+        "title": "Customer Apps",
+        "description": "Web and mobile apps your customers use directly."
+      },
+      {
+        "title": "AI Products",
+        "description": "Chatbots and intelligent features for your workflow."
+      },
+      {
+        "title": "Smart Factory",
+        "description": "Production digitization with predictive AI."
+      },
+      {
+        "title": "System Integration",
+        "description": "Seamless integration with other platforms or internal tools."
+      }
+    ]
+  },
+  "product": {
+    "eyebrow": "Product",
+    "title": "Our products.",
+    "subtitle": "Built in-house at MOA Digital.",
+    "viewProject": "Go to Product page",
+    "requestDemo": "Discuss your project",
+    "confidential": "Confidential",
+    "ours": "Our product",
+    "live": "Live",
+    "items": [
+      {
+        "name": "Aidemly",
+        "tag": "KOL marketing analytics SaaS",
+        "description": "An AI-powered analytics platform for influencer marketing campaign performance. Multi-platform data retrieval, AI-driven sentiment analysis, interactive dashboards, and executive summary generation.",
+        "url": "https://aidemly.com/",
+        "confidential": false,
+        "featured": true,
+        "ours": true,
+        "mockup": "aidemly",
+        "stack": ["Next.js 15", "React 19", "Supabase", "Node + Express", "OpenAI GPT-4o", "Google Cloud Run", "Pub/Sub"]
+      },
+      {
+        "name": "MOA ERP",
+        "tag": "Customizable management system",
+        "description": "A custom cloud platform that manages BOM-level SKUs, stock, and invoicing for distributors and warehouses in any industry. Multi-type invoicing with VAT, supplier and client management, SKU search, and real-time low-stock alerts, all in one workspace.",
+        "url": "https://moa-erp.moadigital.co/",
+        "confidential": false,
+        "featured": true,
+        "ours": true,
+        "mockup": "stock-mgmt"
+      },
+      {
+        "name": "Adaptive AI",
+        "tag": "Self-learning AI for smart manufacturing",
+        "description": "A self-learning AI platform for smart manufacturing. Predicts machine downtime, detects quality issues, and recommends actions, with automatic retraining on the latest factory data.",
+        "url": null,
+        "confidential": false,
+        "featured": true,
+        "ours": true,
+        "mockup": "adaptive-ai"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Production-grade output — by design.",
+    "body": [
+      "MOA Digital is a product studio based in Bangkok. We've shipped web, AI, and mobile products from zero to production for both SME and enterprise clients — built to hold up long after launch day.",
+"We communicate in Thai, English, and Japanese to support seamless value delivery."
+    ],
+    "values": [
+      {
+        "title": "Ship to production",
+        "description": "Demos are easy. Production-quality systems with observability, tests, and a release pipeline — that's the bar."
+      },
+      {
+        "title": "Fast iteration",
+        "description": "We ship in days, not months. Senior engineers cut handoffs and own delivery end-to-end."
+      },
+      {
+        "title": "Own your code",
+        "description": "You get the repo, the infrastructure, and the documentation. We work to make ourselves replaceable."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Tell us about your project.",
+    "subtitle": "We respond within 1-2 business days.",
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "What are you building?",
+      "send": "Send message"
+    },
+    "directEmail": "Or email us directly at",
+    "emailValue": "support@moadigital.co",
+    "directPhone": "Or call us at",
+    "phoneValue": "(+66) 61-652-9469",
+    "thanks": "Thanks, we'll be in touch within 1-2 business days.",
+    "sending": "Sending…",
+    "successTitle": "Message sent",
+    "successBody": "Thanks, we'll be in touch within 1-2 business days.",
+    "errorTitle": "Couldn't send",
+    "errorBody": "Something went wrong. Please try again or email us directly.",
+    "captchaRequired": "Please verify you're not a robot.",
+    "consent": "By submitting, you agree to our Privacy Policy."
+  },
+  "footer": {
+    "tagline": "Product studio for web, AI, and mobile.",
+    "copyright": "© {year} MOA Digital Co., Ltd. All rights reserved.",
+    "address": "33 Borommaratchachonnani 41, Taling Chan, Bangkok 10170, Thailand",
+    "taxId": "Tax ID: 0105569088023",
+    "sections": {
+      "company": "Company",
+      "product": "Product",
+      "contact": "Contact"
+    }
+  },
+  "cookies": {
+    "title": "Cookies",
+    "body": "We use cookies for essential functionality and spam protection (Google reCAPTCHA). We do not use analytics or marketing cookies.",
+    "accept": "Accept",
+    "reject": "Reject non-essential",
+    "settings": "Cookie settings",
+    "settingsTitle": "Cookie preferences",
+    "settingsBody": "Manage which cookies this site can use. Essential cookies are required for the site to function.",
+    "categoryEssentialTitle": "Essential",
+    "categoryEssentialDesc": "Required for site security and core functionality. Always on.",
+    "categoryFunctionalTitle": "Functional (reCAPTCHA)",
+    "categoryFunctionalDesc": "Google reCAPTCHA to detect spam on the contact form. Disabling will prevent form submission.",
+    "save": "Save preferences",
+    "privacyLink": "Read our Privacy Policy"
+  },
+  "legal": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookieSettings": "Cookie settings"
+  },
+  "lang": {
+    "th": "TH",
+    "en": "EN",
+    "switchTo": "ภาษาไทย"
+  }
+}

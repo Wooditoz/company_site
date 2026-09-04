@@ -1,0 +1,181 @@
+---
+import { getLocaleFromUrl, getDict, localizePath } from '@i18n/utils';
+import StockMgmtMockup from './StockMgmtMockup.astro';
+import AdaptiveAIMockup from './AdaptiveAIMockup.astro';
+
+interface Props {
+  showHeader?: boolean;
+}
+
+const { showHeader = true } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+
+type ProductItem = (typeof dict.product.items)[number] & {
+  featured?: boolean;
+  ours?: boolean;
+  mockup?: string;
+};
+
+const items = dict.product.items as readonly ProductItem[];
+const featured = items.filter((i) => i.featured);
+const grid = items.filter((i) => !i.featured);
+---
+
+<section id="product" class="relative scroll-mt-24">
+  <div class={`container-x ${showHeader ? 'py-24 sm:py-28' : 'pt-6 pb-24 sm:pb-28'}`}>
+    {
+      showHeader && (
+        <div class="mb-14 max-w-2xl">
+          <p class="eyebrow mb-4">{dict.product.eyebrow}</p>
+          <h2 class="heading-section text-balance">{dict.product.title}</h2>
+          <p class="mt-4 text-body text-balance">{dict.product.subtitle}</p>
+        </div>
+      )
+    }
+
+    {
+      featured.map((item) => (
+        <article class="surface-card surface-card-hover group relative mb-6 overflow-hidden p-8 sm:p-10 lg:p-12">
+          <div class="pointer-events-none absolute inset-0 -z-10 opacity-40" aria-hidden="true">
+            <div class="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-moa-blue/40 blur-3xl" />
+            <div class="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-moa-cyan/30 blur-3xl" />
+          </div>
+
+          <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+            <div>
+              <h3 class="mb-5 text-3xl font-semibold tracking-tightest text-white sm:text-4xl">
+                <span class="gradient-text">{item.name}</span>
+              </h3>
+              <p class="text-base leading-relaxed text-muted sm:text-lg">{item.description}</p>
+
+              <div class="mt-8">
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                  >
+                    {dict.product.viewProject}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </a>
+                ) : (
+                  <a href={localizePath('/contact', locale)} class="btn-primary">
+                    {dict.product.requestDemo}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </a>
+                )}
+              </div>
+            </div>
+
+            <div class="relative">
+              {item.mockup === 'stock-mgmt' ? (
+                <img
+                  src="/stock-mgmt-mockup.png"
+                  alt={`${item.name} product mockup`}
+                  loading="lazy"
+                  decoding="async"
+                  class="relative w-full max-w-xl mx-auto transition duration-500 group-hover:translate-y-[-2px]"
+                />
+              ) : item.mockup === 'adaptive-ai' ? (
+                <div class="relative w-full max-w-xl mx-auto transition duration-500 group-hover:translate-y-[-2px]">
+                  <AdaptiveAIMockup />
+                </div>
+              ) : (
+                <img
+                  src="/aidemly-mockup.png"
+                  alt={`${item.name} product mockup`}
+                  width="1216"
+                  height="1096"
+                  loading="lazy"
+                  decoding="async"
+                  class="relative w-full max-w-xl mx-auto transition duration-500 group-hover:translate-y-[-2px]"
+                />
+              )}
+            </div>
+          </div>
+
+          {item.mockup === 'aidemly' && (
+            <div class="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-charcoal/80">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+                disableremoteplayback
+                controlslist="nodownload nofullscreen noremoteplayback"
+                preload="auto"
+                poster="/aidemly-demo-poster.jpg"
+                class="block h-auto w-full"
+                aria-label={`${item.name} product demo`}
+              >
+                <source src="/aidemly-demo.webm" type="video/webm" />
+                <source src="/aidemly-demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+          )}
+
+          {item.mockup === 'stock-mgmt' && (
+            <div class="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-charcoal/80">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+                disableremoteplayback
+                controlslist="nodownload nofullscreen noremoteplayback"
+                preload="auto"
+                poster="/stock-mgmt-demo-poster.jpg"
+                class="block h-auto w-full"
+                aria-label={`${item.name} product demo`}
+              >
+                <source src="/stock-mgmt-demo.webm" type="video/webm" />
+                <source src="/stock-mgmt-demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+          )}
+        </article>
+      ))
+    }
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {
+        grid.map((item) => (
+          <article class="surface-card surface-card-hover group relative overflow-hidden p-7">
+            <div class="absolute right-7 top-7">
+              {item.confidential ? (
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-hairline bg-charcoal/80 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-muted">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  {dict.product.confidential}
+                </span>
+              ) : (
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-moa-blue/30 bg-moa-blue/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-moa-cyan">
+                  {dict.product.live}
+                </span>
+              )}
+            </div>
+
+            <p class="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-muted">{item.tag}</p>
+            <h3 class="mb-2 text-xl font-semibold text-white">{item.name}</h3>
+            <p class="mb-6 text-sm leading-relaxed text-muted">{item.description}</p>
+
+            {!item.confidential && item.url ? (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-white transition group-hover:gap-2.5"
+              >
+                {dict.product.viewProject}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            ) : null}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

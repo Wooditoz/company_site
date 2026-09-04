@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ProductGrid from '@components/ProductGrid.astro';
+import { getLocaleFromUrl, getDict } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+---
+
+<BaseLayout title={`${dict.nav.product} — MOA Digital`} description={dict.product.subtitle}>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
+    <div class="container-x relative pb-6 pt-20 sm:pt-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-5">{dict.product.eyebrow}</p>
+        <h1 class="heading-display text-balance">{dict.product.title}</h1>
+        <p class="mt-5 text-body text-balance">{dict.product.subtitle}</p>
+      </div>
+    </div>
+  </section>
+  <ProductGrid showHeader={false} />
+</BaseLayout>

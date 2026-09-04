@@ -1,0 +1,32 @@
+---
+import { getLocaleFromUrl, getDict, localizePath } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+---
+
+<section class="relative">
+  <div class="container-x py-24">
+    <div class="surface-card relative overflow-hidden p-10 sm:p-14">
+      <div class="absolute inset-0 -z-10 opacity-30" aria-hidden="true">
+        <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-moa-blue/40 blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-moa-cyan/30 blur-3xl"></div>
+      </div>
+
+      <div class="max-w-2xl">
+        <h2 class="heading-section text-balance">
+          {dict.hero.ctaPrimary}
+        </h2>
+        <p class="mt-4 text-body text-balance">{dict.contact.subtitle}</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href={localizePath('/contact', locale)} class="btn-primary">
+            {dict.contact.labels.send}
+          </a>
+          <a href={`mailto:${dict.contact.emailValue}`} class="btn-ghost">
+            {dict.contact.emailValue}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+// Render-only page for the StockMgmtMockup component. Used by
+// scripts/render-stock-mgmt-mockup.mjs to capture a transparent PNG.
+// Not linked anywhere; safe to leave deployed (only reachable by direct URL).
+import StockMgmtMockup from '@components/StockMgmtMockup.astro';
+import '../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1216" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Stock mockup render</title>
+  <style is:global>
+    html, body { background: transparent; margin: 0; padding: 0; }
+    /* Render at the natural max-w-xl size so absolute children scale together
+       with the container. We bump DSR in puppeteer for crisp output. */
+  </style>
+</head>
+<body>
+  <div id="render-root" style="width: 656px; padding: 40px;">
+    <StockMgmtMockup />
+  </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+---
+import { getLocaleFromUrl, getDict, localizePath, altLocalePath } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+const currentPath = Astro.url.pathname;
+
+const nav = [
+  { href: localizePath('/services', locale), label: dict.nav.services },
+  { href: localizePath('/product', locale), label: dict.nav.product },
+  { href: localizePath('/contact', locale), label: dict.nav.contact },
+];
+
+const langSwitchHref = altLocalePath(currentPath, locale);
+const homeHref = localizePath('/', locale);
+---
+
+<header class="sticky top-0 z-40 border-b border-hairline/70 bg-charcoal/70 backdrop-blur-xl">
+  <div class="container-x flex h-28 items-center justify-between sm:h-32 lg:h-36">
+    <a href={homeHref} class="group flex items-center" aria-label="MOA Digital home">
+      <img
+        src="/logo.png"
+        srcset="/logo-256.png 256w, /logo.png 1024w"
+        sizes="(max-width: 640px) 80px, (max-width: 1024px) 96px, 112px"
+        alt="MOA Digital"
+        width="1024"
+        height="1024"
+        class="h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 rounded-xl transition group-hover:opacity-90"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-md px-3 py-1.5 text-sm transition',
+              currentPath === item.href
+                ? 'text-white'
+                : 'text-muted hover:text-white',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        href={langSwitchHref}
+        class="rounded-md border border-hairline px-2.5 py-1 text-xs font-medium text-muted transition hover:border-white/20 hover:text-white"
+        aria-label="Switch language"
+      >
+        {dict.lang.switchTo}
+      </a>
+<button
+        type="button"
+        class="md:hidden inline-flex items-center justify-center rounded-md border border-hairline p-2 text-white/80 hover:text-white"
+        aria-label="Toggle menu"
+        data-mobile-toggle
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="hidden border-t border-hairline/70 md:hidden" data-mobile-menu aria-label="Mobile">
+    <div class="container-x flex flex-col gap-1 py-3">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="rounded-md px-3 py-2 text-sm text-muted hover:bg-surface hover:text-white"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector('[data-mobile-toggle]');
+  const menu = document.querySelector('[data-mobile-menu]');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

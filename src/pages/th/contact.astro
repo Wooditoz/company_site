@@ -1,0 +1,179 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getLocaleFromUrl, getDict } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+
+const RECAPTCHA_SITE_KEY = '6LefODYtAAAAALMVQfW1VFtbCqDuYYVHovIdRuwZ';
+---
+
+<BaseLayout title={`${dict.nav.contact} — MOA Digital`} description={dict.contact.subtitle}>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
+    <div class="container-x relative pb-12 pt-20 sm:pt-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-5">{dict.contact.eyebrow}</p>
+        <h1 class="heading-display text-balance">{dict.contact.title}</h1>
+        <p class="mt-5 text-body text-balance">{dict.contact.subtitle}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x pb-24">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[3fr_2fr]">
+      <form
+        id="contact-form"
+        class="surface-card space-y-5 p-7 sm:p-9"
+        novalidate
+      >
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <label class="block">
+            <span class="mb-1.5 block text-xs font-medium uppercase tracking-[0.18em] text-muted">{dict.contact.labels.name}</span>
+            <input
+              required
+              type="text"
+              name="name"
+              maxlength="200"
+              class="w-full rounded-lg border border-hairline bg-charcoal/60 px-3.5 py-2.5 text-sm text-white placeholder-muted/60 outline-none transition focus:border-moa-blue/60 focus:ring-2 focus:ring-moa-blue/20"
+            />
+          </label>
+          <label class="block">
+            <span class="mb-1.5 block text-xs font-medium uppercase tracking-[0.18em] text-muted">{dict.contact.labels.email}</span>
+            <input
+              required
+              type="email"
+              name="email"
+              maxlength="200"
+              class="w-full rounded-lg border border-hairline bg-charcoal/60 px-3.5 py-2.5 text-sm text-white placeholder-muted/60 outline-none transition focus:border-moa-blue/60 focus:ring-2 focus:ring-moa-blue/20"
+            />
+          </label>
+        </div>
+        <label class="block">
+          <span class="mb-1.5 block text-xs font-medium uppercase tracking-[0.18em] text-muted">{dict.contact.labels.company}</span>
+          <input
+            type="text"
+            name="company"
+            maxlength="200"
+            class="w-full rounded-lg border border-hairline bg-charcoal/60 px-3.5 py-2.5 text-sm text-white placeholder-muted/60 outline-none transition focus:border-moa-blue/60 focus:ring-2 focus:ring-moa-blue/20"
+          />
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-xs font-medium uppercase tracking-[0.18em] text-muted">{dict.contact.labels.message}</span>
+          <textarea
+            required
+            name="message"
+            rows="5"
+            maxlength="5000"
+            class="w-full resize-none rounded-lg border border-hairline bg-charcoal/60 px-3.5 py-2.5 text-sm text-white placeholder-muted/60 outline-none transition focus:border-moa-blue/60 focus:ring-2 focus:ring-moa-blue/20"
+          ></textarea>
+        </label>
+
+        <input type="text" name="_hp" tabindex="-1" autocomplete="off" class="absolute -left-[10000px] h-0 w-0 opacity-0" aria-hidden="true" />
+
+        <input type="hidden" name="locale" value={locale} />
+
+        <div class="recaptcha-wrap">
+          <div class="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY} data-theme="dark"></div>
+        </div>
+
+        <button
+          type="submit"
+          data-submit
+          class="btn-primary w-full sm:w-auto disabled:opacity-60 disabled:pointer-events-none"
+        >
+          <span data-label-idle>{dict.contact.labels.send}</span>
+          <span data-label-sending class="hidden">{dict.contact.sending}</span>
+        </button>
+
+        <p class="text-xs text-muted">
+          การส่งฟอร์มถือว่าคุณยอมรับ <a href="/th/privacy" class="text-moa-cyan hover:underline">นโยบายความเป็นส่วนตัว</a> ของเรา
+        </p>
+
+        <div data-status-success class="hidden rounded-lg border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm">
+          <p class="font-semibold text-emerald-300">{dict.contact.successTitle}</p>
+          <p class="mt-1 text-emerald-200/80">{dict.contact.successBody}</p>
+        </div>
+        <div data-status-error class="hidden rounded-lg border border-red-500/40 bg-red-500/10 p-4 text-sm">
+          <p class="font-semibold text-red-300">{dict.contact.errorTitle}</p>
+          <p class="mt-1 text-red-200/80" data-error-body>{dict.contact.errorBody}</p>
+        </div>
+      </form>
+
+      <aside class="space-y-6">
+        <div class="surface-card p-6">
+          <p class="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted">{dict.contact.directEmail}</p>
+          <a href={`mailto:${dict.contact.emailValue}`} class="text-base font-medium text-white hover:gradient-text transition">
+            {dict.contact.emailValue}
+          </a>
+        </div>
+        <div class="surface-card p-6">
+          <p class="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted">{dict.contact.directPhone}</p>
+          <a href={`tel:${dict.contact.phoneValue.replace(/[^+\d]/g, '')}`} class="text-base font-medium text-white hover:gradient-text transition">
+            {dict.contact.phoneValue}
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer is:inline></script>
+
+  <script define:vars={{ captchaRequiredMsg: dict.contact.captchaRequired, defaultErrorMsg: dict.contact.errorBody }}>
+    const form = document.getElementById('contact-form');
+    if (form) {
+      const btn = form.querySelector('[data-submit]');
+      const labelIdle = form.querySelector('[data-label-idle]');
+      const labelSending = form.querySelector('[data-label-sending]');
+      const success = form.querySelector('[data-status-success]');
+      const error = form.querySelector('[data-status-error]');
+      const errorBody = form.querySelector('[data-error-body]');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const captchaToken = window.grecaptcha?.getResponse() || '';
+        if (!captchaToken) {
+          if (errorBody) errorBody.textContent = captchaRequiredMsg;
+          success?.classList.add('hidden');
+          error?.classList.remove('hidden');
+          return;
+        }
+
+        success?.classList.add('hidden');
+        error?.classList.add('hidden');
+        btn?.setAttribute('disabled', 'true');
+        labelIdle?.classList.add('hidden');
+        labelSending?.classList.remove('hidden');
+
+        const data = {
+          ...Object.fromEntries(new FormData(form).entries()),
+          captchaToken,
+        };
+
+        try {
+          const resp = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+
+          success?.classList.remove('hidden');
+          form.reset();
+          window.grecaptcha?.reset();
+        } catch (err) {
+          console.error('Contact form error', err);
+          if (errorBody) errorBody.textContent = defaultErrorMsg;
+          error?.classList.remove('hidden');
+        } finally {
+          btn?.removeAttribute('disabled');
+          labelIdle?.classList.remove('hidden');
+          labelSending?.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</BaseLayout>

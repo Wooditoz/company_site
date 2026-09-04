@@ -1,0 +1,33 @@
+---
+import { getLocaleFromUrl, getDict, localizePath } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+---
+
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
+  <div class="container-x relative pt-24 pb-28 sm:pt-32 sm:pb-36 lg:pt-40 lg:pb-44">
+    <div class="mx-auto max-w-5xl text-center">
+      <p class="eyebrow animate-fade-in mb-6">
+        <span class="h-1.5 w-1.5 rounded-full bg-moa-cyan"></span>
+        {dict.hero.eyebrow}
+      </p>
+      <h1 class="heading-display text-balance animate-fade-up">
+        {dict.hero.title}
+      </h1>
+      <p class="mt-6 text-body text-balance animate-fade-up" style="animation-delay:80ms">
+        {dict.hero.subtitle}
+      </p>
+      <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row animate-fade-up" style="animation-delay:160ms">
+        <a href={localizePath('/contact', locale)} class="btn-primary">
+          {dict.hero.ctaPrimary}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href={localizePath('/product', locale)} class="btn-ghost">
+          {dict.hero.ctaSecondary}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

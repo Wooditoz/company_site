@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "title": "MOA Digital — Product Studio สำหรับ SaaS AI และ Smart Factory",
+    "description": "MOA Digital เป็น product studio จากกรุงเทพฯ พัฒนา SaaS, Business System, AI Product, และ Smart Factory Solution สำหรับลูกค้า SME และองค์กร",
+    "ogAlt": "MOA Digital"
+  },
+  "nav": {
+    "services": "บริการ",
+    "product": "ผลิตภัณฑ์",
+    "about": "เกี่ยวกับเรา",
+    "contact": "ติดต่อ",
+    "letsTalk": "คุยกับเรา"
+  },
+  "hero": {
+    "eyebrow": "Product Studio · กรุงเทพฯ",
+    "title": "We build digital products that earn their keep.",
+    "subtitle": "MOA Digital ทำงานกับทีม SME และองค์กร เพื่อพัฒนา SaaS, Business System, AI Product, และ Smart Factory Solution",
+    "ctaPrimary": "เริ่มโปรเจกต์",
+    "ctaSecondary": "ดูผลิตภัณฑ์ของเรา"
+  },
+  "trust": {
+    "label": "ทีมที่ส่งงาน production เลือกใช้เรา"
+  },
+  "services": {
+    "eyebrow": "บริการของเรา",
+    "title": "เปลี่ยนไอเดียให้กลายเป็น production",
+    "subtitle": "",
+    "items": [
+      {
+        "title": "SaaS Platforms",
+        "description": "ผลิตภัณฑ์ SaaS แบบ multi-tenant ที่คุณ launch และ scale ได้"
+      },
+      {
+        "title": "Business Systems",
+        "description": "เครื่องมือภายในสำหรับงาน operations ประจำวัน"
+      },
+      {
+        "title": "Customer Apps",
+        "description": "เว็บและแอปมือถือสำหรับลูกค้าของคุณ"
+      },
+      {
+        "title": "AI Products",
+        "description": "Chatbot และฟีเจอร์ AI สำหรับ workflow ของคุณ"
+      },
+      {
+        "title": "Smart Factory",
+        "description": "เปลี่ยนโรงงานเป็น digital ด้วย AI ที่คาดการณ์ได้"
+      },
+      {
+        "title": "System Integration",
+        "description": "เชื่อมต่อ platform อื่นและเครื่องมือภายในแบบ seamless"
+      }
+    ]
+  },
+  "product": {
+    "eyebrow": "ผลิตภัณฑ์",
+    "title": "ผลิตภัณฑ์ของเรา",
+    "subtitle": "พัฒนาเองโดยทีม MOA Digital",
+    "viewProject": "ไปยังหน้าโปรดักต์",
+    "requestDemo": "ปรึกษาโปรเจกต์",
+    "confidential": "ลับเฉพาะ",
+    "ours": "ผลิตภัณฑ์ของเรา",
+    "live": "Live",
+    "items": [
+      {
+        "name": "Aidemly",
+        "tag": "SaaS วิเคราะห์แคมเปญ KOL",
+        "description": "แพลตฟอร์ม AI สำหรับวิเคราะห์ประสิทธิภาพแคมเปญ Influencer Marketing รวบรวมข้อมูลข้ามแพลตฟอร์ม วิเคราะห์ sentiment พร้อม interactive dashboard และรายงานสรุปสำหรับผู้บริหาร",
+        "url": "https://aidemly.com/",
+        "confidential": false,
+        "featured": true,
+        "ours": true,
+        "mockup": "aidemly",
+        "stack": ["Next.js 15", "React 19", "Supabase", "Node + Express", "OpenAI GPT-4o", "Google Cloud Run", "Pub/Sub"]
+      },
+      {
+        "name": "MOA ERP",
+        "tag": "ระบบจัดการแบบปรับแต่งได้",
+        "description": "แพลตฟอร์มคลาวด์แบบ custom จัดการ BOM-level SKU, สต็อก, และการออกใบกำกับ ใช้ได้ทุกอุตสาหกรรม รองรับใบกำกับหลายประเภทพร้อม VAT จัดการ supplier และลูกค้า ค้นหาด้วย SKU พร้อมแจ้งเตือน low-stock แบบ real-time ครบในที่เดียว",
+        "url": "https://moa-erp.moadigital.co/",
+        "confidential": false,
+        "featured": true,
+        "ours": true,
+        "mockup": "stock-mgmt"
+      },
+      {
+        "name": "Adaptive AI",
+        "tag": "AI ที่เรียนรู้ด้วยตัวเอง สำหรับ smart manufacturing",
+        "description": "แพลตฟอร์ม AI ที่เรียนรู้ด้วยตัวเอง สำหรับ smart manufacturing คาดการณ์ downtime ของเครื่อง, ตรวจจับปัญหาคุณภาพ, และแนะนำแนวทางการตัดสินใจ พร้อม retrain อัตโนมัติด้วยข้อมูลโรงงานล่าสุด",
+        "url": null,
+        "confidential": false,
+        "featured": true,
+        "ours": true,
+        "mockup": "adaptive-ai"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "เกี่ยวกับเรา",
+    "title": "ผลงานระดับ production — โดยตั้งใจ",
+    "body": [
+      "MOA Digital เป็น product studio จากกรุงเทพฯ ส่งโปรดักต์ทั้งเว็บ AI และโมบายล์ ตั้งแต่เริ่มต้นจนถึง production มาแล้วทั้งกับ SME และองค์กร สร้างให้ใช้งานได้จริงในระยะยาว",
+"เราสื่อสารได้ทั้งภาษาไทย อังกฤษ และญี่ปุ่น เพื่อส่งมอบงานได้อย่างราบรื่น"
+    ],
+    "values": [
+      {
+        "title": "ส่งงานขึ้น production",
+        "description": "การทำ demo นั้นง่าย แต่ระบบคุณภาพระดับ production ที่มี observability tests และ release pipeline ต่างหากที่เป็นมาตรฐานของเรา"
+      },
+      {
+        "title": "Iterate ได้เร็ว",
+        "description": "ส่งงานเป็นวัน ไม่ใช่เป็นเดือน วิศวกรซีเนียร์ส่งงานตั้งแต่ต้นจนจบ ไม่ต้องผ่านหลายชั้น"
+      },
+      {
+        "title": "โค้ดเป็นของคุณ",
+        "description": "คุณได้ทั้ง repo โครงสร้างพื้นฐาน และเอกสาร เราทำงานเพื่อให้คุณไม่ต้องพึ่งเราตลอดไป"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "ติดต่อเรา",
+    "title": "บอกเราเกี่ยวกับโปรเจกต์ของคุณ",
+    "subtitle": "เราตอบกลับภายใน 1-2 วันทำการ",
+    "labels": {
+      "name": "ชื่อ",
+      "email": "อีเมล",
+      "company": "บริษัท",
+      "message": "กำลังสร้างอะไรอยู่",
+      "send": "ส่งข้อความ"
+    },
+    "directEmail": "หรืออีเมลเราโดยตรงที่",
+    "emailValue": "support@moadigital.co",
+    "directPhone": "หรือโทรหาเราที่",
+    "phoneValue": "(+66) 61-652-9469",
+    "thanks": "ขอบคุณ เราจะติดต่อกลับภายใน 1-2 วันทำการ",
+    "sending": "กำลังส่ง…",
+    "successTitle": "ส่งข้อความแล้ว",
+    "successBody": "ขอบคุณ เราจะติดต่อกลับภายใน 1-2 วันทำการ",
+    "errorTitle": "ส่งไม่สำเร็จ",
+    "errorBody": "เกิดข้อผิดพลาด กรุณาลองอีกครั้งหรืออีเมลหาเราโดยตรง",
+    "captchaRequired": "กรุณายืนยันว่าคุณไม่ใช่บอท",
+    "consent": "การส่งฟอร์มถือว่าคุณยอมรับนโยบายความเป็นส่วนตัวของเรา"
+  },
+  "footer": {
+    "tagline": "Product Studio สำหรับเว็บ AI และโมบายล์",
+    "copyright": "© {year} บริษัท เอ็มโอเอ ดิจิทัล จำกัด สงวนลิขสิทธิ์",
+    "address": "เลขที่ 33 ซอยบรมราชชนนี 41 ถนนบรมราชชนนี แขวงตลิ่งชัน เขตตลิ่งชัน กรุงเทพมหานคร 10170",
+    "taxId": "เลขประจำตัวผู้เสียภาษี: 0105569088023",
+    "sections": {
+      "company": "บริษัท",
+      "product": "ผลิตภัณฑ์",
+      "contact": "ติดต่อ"
+    }
+  },
+  "cookies": {
+    "title": "Cookies",
+    "body": "เราใช้คุกกี้สำหรับการทำงานพื้นฐานและป้องกัน spam (Google reCAPTCHA) เราไม่ใช้คุกกี้สำหรับ analytics หรือการตลาด",
+    "accept": "ยอมรับ",
+    "reject": "ปฏิเสธคุกกี้ที่ไม่จำเป็น",
+    "settings": "ตั้งค่าคุกกี้",
+    "settingsTitle": "การตั้งค่าคุกกี้",
+    "settingsBody": "จัดการคุกกี้ที่เว็บไซต์นี้ใช้ คุกกี้ที่จำเป็นต้องเปิดเสมอเพื่อให้เว็บทำงานได้",
+    "categoryEssentialTitle": "Essential (จำเป็น)",
+    "categoryEssentialDesc": "จำเป็นสำหรับความปลอดภัยและการทำงานพื้นฐานของเว็บ เปิดตลอด",
+    "categoryFunctionalTitle": "Functional (reCAPTCHA)",
+    "categoryFunctionalDesc": "Google reCAPTCHA สำหรับตรวจจับ spam ในฟอร์มติดต่อ ถ้าปิดจะส่งฟอร์มไม่ได้",
+    "save": "บันทึก",
+    "privacyLink": "อ่านนโยบายความเป็นส่วนตัว"
+  },
+  "legal": {
+    "privacy": "ความเป็นส่วนตัว",
+    "terms": "ข้อกำหนด",
+    "cookieSettings": "ตั้งค่าคุกกี้"
+  },
+  "lang": {
+    "th": "TH",
+    "en": "EN",
+    "switchTo": "English"
+  }
+}
