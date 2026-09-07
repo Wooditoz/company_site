@@ -71,12 +71,20 @@
         "featured": true,
         "ours": true,
         "mockup": "aidemly",
-        "stack": ["Next.js 15", "React 19", "Supabase", "Node + Express", "OpenAI GPT-4o", "Google Cloud Run", "Pub/Sub"]
+        "stack": [
+          "Next.js 15",
+          "React 19",
+          "Supabase",
+          "Node + Express",
+          "OpenAI GPT-4o",
+          "Google Cloud Run",
+          "Pub/Sub"
+        ]
       },
       {
         "name": "MOA ERP",
-        "tag": "Customizable management system",
-        "description": "A custom cloud platform that manages BOM-level SKUs, stock, and invoicing for distributors and warehouses in any industry. Multi-type invoicing with VAT, supplier and client management, SKU search, and real-time low-stock alerts, all in one workspace.",
+        "tag": "ERP for wholesale & retail shops",
+        "description": "An ERP for wholesale/retail and auto-parts shops: multi-branch stock, cross-reference part numbers, car fitment, barcode scanning, VAT tax invoicing, retail/wholesale/garage price tiers, purchasing with low-stock alerts, and real-time sales analytics — all in one workspace.",
         "url": "https://moa-erp.moadigital.co/",
         "confidential": false,
         "featured": true,
@@ -100,7 +108,7 @@
     "title": "Production-grade output — by design.",
     "body": [
       "MOA Digital is a product studio based in Bangkok. We've shipped web, AI, and mobile products from zero to production for both SME and enterprise clients — built to hold up long after launch day.",
-"We communicate in Thai, English, and Japanese to support seamless value delivery."
+      "We communicate in Thai, English, and Japanese to support seamless value delivery."
     ],
     "values": [
       {
