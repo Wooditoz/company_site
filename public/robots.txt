@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moadigital.co/sitemap-index.xml
