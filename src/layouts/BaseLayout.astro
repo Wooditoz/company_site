@@ -28,7 +28,29 @@ const {
   ogImage = '/og-image.png',
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://moadigital.co').toString();
+const site = Astro.site ?? 'https://moadigital.co';
+const canonical = new URL(Astro.url.pathname, site).toString();
+
+// hreflang pair: EN lives at /x, TH at /th/x (prefixDefaultLocale: false)
+const path = Astro.url.pathname;
+const thPath = path.startsWith('/th/') || path === '/th' ? path : `/th${path === '/' ? '' : path}` || '/th';
+const enPath = path.startsWith('/th') ? path.replace(/^\/th\/?/, '/') : path;
+const enUrl = new URL(enPath, site).toString();
+const thUrl = new URL(thPath === '' ? '/th' : thPath, site).toString();
+
+// Organization identity for brand search results / knowledge panel
+const orgLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'MOA Digital',
+  url: 'https://moadigital.co/',
+  logo: 'https://moadigital.co/apple-touch-icon.png',
+  description:
+    locale === 'th'
+      ? 'MOA Digital พัฒนาซอฟต์แวร์ธุรกิจสำหรับ SME และองค์กร — MOA ERP ระบบจัดการร้านค้าส่ง-ปลีก และ Aidemly แพลตฟอร์ม AI วิเคราะห์ KOL'
+      : 'MOA Digital is a Bangkok-based product studio building SaaS platforms, business systems, and AI products for SME and enterprise clients.',
+  sameAs: ['https://moa-erp.moadigital.co/', 'https://aidemly.com/'],
+});
 ---
 
 <!doctype html>
@@ -41,6 +63,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://moadigital.
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="th" href={thUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+    <script type="application/ld+json" set:html={orgLd} />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
