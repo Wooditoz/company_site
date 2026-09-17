@@ -4,18 +4,27 @@
 // (gradient title, description, CTA, looping demo video below).
 import { getLocaleFromUrl, getDict } from '@i18n/utils';
 
+interface Props {
+  showHeader?: boolean;
+}
+
+const { showHeader = true } = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 const dict = getDict(locale);
 const portfolio = dict.product.portfolio;
 ---
 
 <section id="portfolio" class="relative scroll-mt-24">
-  <div class="container-x pb-24 sm:pb-28">
-    <div class="mb-14 max-w-2xl">
-      <p class="eyebrow mb-4">{portfolio.eyebrow}</p>
-      <h2 class="heading-section text-balance">{portfolio.title}</h2>
-      <p class="mt-4 text-body text-balance">{portfolio.subtitle}</p>
-    </div>
+  <div class={`container-x ${showHeader ? 'py-24 sm:py-28' : 'pt-6 pb-24 sm:pb-28'}`}>
+    {
+      showHeader && (
+        <div class="mb-14 max-w-2xl">
+          <p class="eyebrow mb-4">{portfolio.eyebrow}</p>
+          <h2 class="heading-section text-balance">{portfolio.title}</h2>
+          <p class="mt-4 text-body text-balance">{portfolio.subtitle}</p>
+        </div>
+      )
+    }
 
     {
       portfolio.items.map((item) => (
