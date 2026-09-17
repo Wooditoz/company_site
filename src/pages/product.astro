@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import ProductGrid from '@components/ProductGrid.astro';
+import PortfolioSection from '@components/PortfolioSection.astro';
 import { getLocaleFromUrl, getDict } from '@i18n/utils';
 
 const locale = getLocaleFromUrl(Astro.url);
@@ -19,4 +20,5 @@ const dict = getDict(locale);
     </div>
   </section>
   <ProductGrid showHeader={false} />
+  <PortfolioSection />
 </BaseLayout>

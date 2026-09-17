@@ -1,0 +1,67 @@
+---
+// Client-commissioned projects — separate from "Our products" (built in-house):
+// these are paid builds for clients, shown in the same featured-card pattern
+// (gradient title, description, CTA, looping demo video below).
+import { getLocaleFromUrl, getDict } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+const portfolio = dict.product.portfolio;
+---
+
+<section id="portfolio" class="relative scroll-mt-24">
+  <div class="container-x pb-24 sm:pb-28">
+    <div class="mb-14 max-w-2xl">
+      <p class="eyebrow mb-4">{portfolio.eyebrow}</p>
+      <h2 class="heading-section text-balance">{portfolio.title}</h2>
+      <p class="mt-4 text-body text-balance">{portfolio.subtitle}</p>
+    </div>
+
+    {
+      portfolio.items.map((item) => (
+        <article class="surface-card surface-card-hover group relative mb-6 overflow-hidden p-8 sm:p-10 lg:p-12">
+          <div class="pointer-events-none absolute inset-0 -z-10 opacity-40" aria-hidden="true">
+            <div class="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-moa-blue/40 blur-3xl" />
+            <div class="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-moa-cyan/30 blur-3xl" />
+          </div>
+
+          <div class="max-w-3xl">
+            <p class="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-muted">{item.tag}</p>
+            <h3 class="mb-5 text-3xl font-semibold tracking-tightest text-white sm:text-4xl">
+              <span class="gradient-text">{item.name}</span>
+            </h3>
+            <p class="text-base leading-relaxed text-muted sm:text-lg">{item.description}</p>
+
+            <div class="mt-8">
+              <a href={item.url} target="_blank" rel="noopener noreferrer" class="btn-primary">
+                {dict.product.viewProject}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+
+          {item.video && (
+            <div class="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-charcoal/80">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+                disableremoteplayback
+                controlslist="nodownload nofullscreen noremoteplayback"
+                preload="auto"
+                poster={`/${item.video}-poster.jpg`}
+                class="block h-auto w-full"
+                aria-label={`${item.name} demo`}
+              >
+                <source src={`/${item.video}.webm`} type="video/webm" />
+                <source src={`/${item.video}.mp4`} type="video/mp4" />
+              </video>
+            </div>
+          )}
+        </article>
+      ))
+    }
+  </div>
+</section>
