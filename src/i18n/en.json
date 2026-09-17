@@ -107,12 +107,12 @@
     "portfolio": {
       "eyebrow": "Client Projects",
       "title": "Built for our clients.",
-      "subtitle": "Commissioned platforms we designed, built and operate end to end.",
+      "subtitle": "Commissioned platforms we designed and built end to end.",
       "items": [
         {
           "name": "Seconds Marketplace",
           "tag": "B2B used machinery marketplace",
-          "description": "A bilingual marketplace for used industrial machinery in Thailand, built for IBS Machinex. Over 14,000 live listings of CNC lathes, machining centers, press machines and more, with AI-powered search in Thai, English and Japanese, automated scraping pipelines, AI photo curation, and full SEO optimization.",
+          "description": "A bilingual marketplace for used industrial machinery in Thailand, built for IBS Machinex. Over 14,000 listings of CNC lathes, machining centers, press machines and more, with AI-powered search across Thai, English and Japanese, smart image handling, and full SEO optimization.",
           "url": "https://secondsmarketplace.com/marketplace",
           "video": "seconds-demo"
         }
