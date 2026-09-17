@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getLocaleFromUrl, getDict, localizePath } from '@i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+
+const posts = (await getCollection('blog', (e) => e.data.locale === 'th')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('th-TH', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Bangkok' });
+---
+
+<BaseLayout title={`${dict.nav.blog} — MOA Digital`} description={dict.blog.subtitle}>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
+    <div class="container-x relative pb-6 pt-20 sm:pt-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-5">{dict.blog.eyebrow}</p>
+        <h1 class="heading-display text-balance">{dict.blog.title}</h1>
+        <p class="mt-5 text-body text-balance">{dict.blog.subtitle}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x pt-6 pb-24 sm:pb-28">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {
+        posts.map((post) => (
+          <a
+            href={localizePath(`/blog/${post.slug.replace(/^th\//, '')}`, locale)}
+            class="surface-card surface-card-hover group flex flex-col p-7"
+          >
+            <time class="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-muted" datetime={post.data.date.toISOString()}>
+              {fmtDate(post.data.date)}
+            </time>
+            <h2 class="mb-3 text-xl font-semibold text-white group-hover:text-moa-cyan transition">{post.data.title}</h2>
+            <p class="mb-6 text-sm leading-relaxed text-muted">{post.data.description}</p>
+            <span class="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-white transition group-hover:gap-2.5">
+              {dict.blog.readMore}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

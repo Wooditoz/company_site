@@ -38,16 +38,33 @@ const enPath = path.startsWith('/th') ? path.replace(/^\/th\/?/, '/') : path;
 const enUrl = new URL(enPath, site).toString();
 const thUrl = new URL(thPath === '' ? '/th' : thPath, site).toString();
 
-// Organization identity for brand search results / knowledge panel
+// Organization identity for brand search results / knowledge panel.
+// ProfessionalService (a LocalBusiness subtype) + postal address ties the
+// entity to Bangkok local search and any future Google Business Profile.
 const orgLd = JSON.stringify({
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'ProfessionalService'],
   name: 'MOA Digital',
+  legalName: 'MOA Digital Co., Ltd.',
   url: 'https://moadigital.co/',
   logo: 'https://moadigital.co/apple-touch-icon.png',
+  image: 'https://moadigital.co/og-image.png',
+  telephone: '+66-61-652-9469',
+  email: 'support@moadigital.co',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '33 Borommaratchachonnani 41, Borommaratchachonnani Rd.',
+    addressLocality: 'Taling Chan',
+    addressRegion: 'Bangkok',
+    postalCode: '10170',
+    addressCountry: 'TH',
+  },
+  areaServed: 'TH',
+  knowsLanguage: ['th', 'en', 'ja'],
+  priceRange: '$$',
   description:
     locale === 'th'
-      ? 'MOA Digital พัฒนาซอฟต์แวร์ธุรกิจสำหรับ SME และองค์กร — MOA ERP ระบบจัดการร้านค้าส่ง-ปลีก และ Aidemly แพลตฟอร์ม AI วิเคราะห์ KOL'
+      ? 'MOA Digital บริษัทพัฒนาซอฟต์แวร์ในกรุงเทพฯ รับพัฒนาระบบ SaaS, ระบบงานธุรกิจ (ERP), AI Product และ Smart Factory สำหรับ SME และองค์กร'
       : 'MOA Digital is a Bangkok-based product studio building SaaS platforms, business systems, and AI products for SME and enterprise clients.',
   sameAs: ['https://moa-erp.moadigital.co/', 'https://aidemly.com/'],
 });

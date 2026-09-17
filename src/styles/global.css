@@ -101,3 +101,42 @@
     text-wrap: balance;
   }
 }
+
+/* Blog article body (markdown output) — shared by /blog and /th/blog */
+.post-body {
+  color: rgb(203 213 225);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+.post-body h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 2.5rem 0 1rem;
+}
+.post-body h3 {
+  color: #fff;
+  font-size: 1.17rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+}
+.post-body p {
+  margin: 0 0 1.25rem;
+}
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+}
+.post-body ul { list-style: disc; }
+.post-body ol { list-style: decimal; }
+.post-body li { margin-bottom: 0.5rem; }
+.post-body li::marker { color: rgb(100 116 139); }
+.post-body strong { color: #fff; font-weight: 600; }
+.post-body a {
+  color: rgb(103 232 249);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.post-body a:hover { color: #fff; }

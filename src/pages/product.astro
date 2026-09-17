@@ -5,9 +5,28 @@ import { getLocaleFromUrl, getDict } from '@i18n/utils';
 
 const locale = getLocaleFromUrl(Astro.url);
 const dict = getDict(locale);
+
+const productsLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: dict.product.items.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'SoftwareApplication',
+      name: p.name,
+      description: p.description,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      author: { '@type': 'Organization', name: 'MOA Digital' },
+      ...(p.url ? { url: p.url } : {}),
+    },
+  })),
+});
 ---
 
 <BaseLayout title={`${dict.nav.product} — MOA Digital`} description={dict.product.subtitle}>
+  <script type="application/ld+json" set:html={productsLd} />
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
     <div class="container-x relative pb-6 pt-20 sm:pt-24">

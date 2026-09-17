@@ -8,6 +8,7 @@
     "services": "Services",
     "product": "Product",
     "portfolio": "Portfolio",
+    "blog": "Blog",
     "about": "About",
     "contact": "Contact",
     "letsTalk": "Let's talk"
@@ -199,5 +200,12 @@
     "th": "TH",
     "en": "EN",
     "switchTo": "ภาษาไทย"
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Insights and guides.",
+    "subtitle": "Practical articles on software, ERP, and AI for business, written by the team that builds them.",
+    "readMore": "Read article",
+    "back": "All articles"
   }
 }

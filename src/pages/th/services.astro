@@ -6,9 +6,26 @@ import { getLocaleFromUrl, getDict } from '@i18n/utils';
 
 const locale = getLocaleFromUrl(Astro.url);
 const dict = getDict(locale);
+
+const servicesLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: dict.services.items.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Service',
+      name: s.title,
+      description: s.description,
+      provider: { '@type': 'Organization', name: 'MOA Digital' },
+      areaServed: 'TH',
+    },
+  })),
+});
 ---
 
 <BaseLayout title={`${dict.nav.services} — MOA Digital`} description={dict.services.subtitle}>
+  <script type="application/ld+json" set:html={servicesLd} />
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
     <div class="container-x relative pb-6 pt-20 sm:pt-24">

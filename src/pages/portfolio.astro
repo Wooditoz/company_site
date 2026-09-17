@@ -6,9 +6,26 @@ import { getLocaleFromUrl, getDict } from '@i18n/utils';
 const locale = getLocaleFromUrl(Astro.url);
 const dict = getDict(locale);
 const portfolio = dict.product.portfolio;
+
+const portfolioLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: portfolio.items.map((w, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'WebSite',
+      name: w.name,
+      description: w.description,
+      url: w.url,
+      creator: { '@type': 'Organization', name: 'MOA Digital' },
+    },
+  })),
+});
 ---
 
 <BaseLayout title={`${dict.nav.portfolio} — MOA Digital`} description={portfolio.subtitle}>
+  <script type="application/ld+json" set:html={portfolioLd} />
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
     <div class="container-x relative pb-6 pt-20 sm:pt-24">

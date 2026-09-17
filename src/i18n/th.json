@@ -1,13 +1,14 @@
 {
   "meta": {
-    "title": "MOA Digital — Product Studio สำหรับ SaaS AI และ Smart Factory",
-    "description": "MOA Digital เป็น product studio จากกรุงเทพฯ พัฒนา SaaS, Business System, AI Product, และ Smart Factory Solution สำหรับลูกค้า SME และองค์กร",
+    "title": "MOA Digital — รับพัฒนาระบบ SaaS, ERP, AI และ Smart Factory | บริษัทพัฒนาซอฟต์แวร์ กรุงเทพฯ",
+    "description": "บริษัทพัฒนาซอฟต์แวร์ในกรุงเทพฯ รับพัฒนาระบบ SaaS, ระบบงานธุรกิจและ ERP, AI Chatbot และ Smart Factory สำหรับ SME และองค์กร ทีมวิศวกรซีเนียร์ ส่งงานระดับ production สื่อสารได้ทั้งไทย อังกฤษ ญี่ปุ่น",
     "ogAlt": "MOA Digital"
   },
   "nav": {
     "services": "บริการ",
     "product": "ผลิตภัณฑ์",
     "portfolio": "ผลงาน",
+    "blog": "บทความ",
     "about": "เกี่ยวกับเรา",
     "contact": "ติดต่อ",
     "letsTalk": "คุยกับเรา"
@@ -199,5 +200,12 @@
     "th": "TH",
     "en": "EN",
     "switchTo": "English"
+  },
+  "blog": {
+    "eyebrow": "บทความ",
+    "title": "บทความและคู่มือ",
+    "subtitle": "ความรู้เรื่องซอฟต์แวร์ ระบบ ERP และ AI สำหรับธุรกิจ เขียนโดยทีมที่พัฒนาระบบจริง",
+    "readMore": "อ่านบทความ",
+    "back": "บทความทั้งหมด"
   }
 }

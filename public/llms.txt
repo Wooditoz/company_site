@@ -1,0 +1,35 @@
+# MOA Digital
+
+> MOA Digital is a Bangkok-based product studio building SaaS platforms, business systems, AI products, and smart factory solutions for SME and enterprise clients. The team works in Thai, English, and Japanese, and ships production-grade systems end to end: design, development, infrastructure, and long-term operation.
+
+- Website: https://moadigital.co (English) / https://moadigital.co/th/ (Thai)
+- Contact: support@moadigital.co, +66 61 652 9469
+- Address: 33 Borommaratchachonnani 41, Taling Chan, Bangkok 10170, Thailand
+- Company: MOA Digital Co., Ltd. (Tax ID 0105569088023)
+
+## Services
+
+- SaaS platform development: multi-tenant products you can launch and scale
+- Business systems: internal tools (ERP, stock, invoicing) that run daily operations
+- Customer apps: web and mobile apps for end customers
+- AI products: chatbots and intelligent features built into business workflows
+- Smart factory: production digitization with predictive AI
+- System integration: connecting platforms and internal tools
+
+## Products (built in-house)
+
+- Aidemly: AI-powered analytics platform for influencer (KOL) marketing campaigns. https://aidemly.com/
+- MOA ERP: ERP for wholesale/retail and auto-parts shops. Multi-branch stock, cross-reference part numbers, barcode scanning, VAT invoicing, price tiers, purchasing, and real-time sales analytics. https://moa-erp.moadigital.co/
+- Adaptive AI: self-learning AI platform for smart manufacturing. Predicts machine downtime, detects quality issues, and recommends actions.
+
+## Client work
+
+- Seconds Marketplace (built for IBS Machinex): bilingual B2B marketplace for used industrial machinery in Thailand with over 14,000 live listings and AI-powered search in Thai, English, and Japanese. https://secondsmarketplace.com/marketplace
+
+## Pages
+
+- Services: https://moadigital.co/services
+- Products: https://moadigital.co/product
+- Portfolio: https://moadigital.co/portfolio
+- Blog: https://moadigital.co/blog
+- Contact: https://moadigital.co/contact

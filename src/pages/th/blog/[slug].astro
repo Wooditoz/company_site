@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getLocaleFromUrl, getDict, localizePath } from '@i18n/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (e) => e.data.locale === 'th');
+  return posts.map((entry) => ({
+    params: { slug: entry.slug.replace(/^th\//, '') },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const locale = getLocaleFromUrl(Astro.url);
+const dict = getDict(locale);
+
+const site = (Astro.site ?? 'https://moadigital.co').toString().replace(/\/$/, '');
+const pageUrl = `${site}${Astro.url.pathname}`;
+
+const articleLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: entry.data.title,
+  description: entry.data.description,
+  datePublished: entry.data.date.toISOString(),
+  dateModified: entry.data.date.toISOString(),
+  inLanguage: entry.data.locale,
+  author: { '@type': 'Organization', name: 'MOA Digital', url: 'https://moadigital.co/' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'MOA Digital',
+    logo: { '@type': 'ImageObject', url: 'https://moadigital.co/apple-touch-icon.png' },
+  },
+  mainEntityOfPage: pageUrl,
+});
+
+const fmtDate = entry.data.date.toLocaleDateString('th-TH', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'Asia/Bangkok',
+});
+---
+
+<BaseLayout title={`${entry.data.title} — MOA Digital`} description={entry.data.description}>
+  <script type="application/ld+json" set:html={articleLd} />
+  <article class="container-x pb-24 pt-16 sm:pt-20 sm:pb-28">
+    <div class="mx-auto max-w-3xl">
+      <a href={localizePath('/blog', locale)} class="mb-8 inline-flex items-center gap-1.5 text-sm text-muted transition hover:text-white">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        {dict.blog.back}
+      </a>
+      <time class="mb-4 block text-xs font-medium uppercase tracking-[0.18em] text-muted" datetime={entry.data.date.toISOString()}>
+        {fmtDate}
+      </time>
+      <h1 class="heading-section text-balance mb-10">{entry.data.title}</h1>
+      <div class="post-body">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
